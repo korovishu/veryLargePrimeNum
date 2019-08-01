@@ -34,7 +34,7 @@ bool small(string s1, string s2)
     {
         for(int i=0; i<n1; i++)
         {
-            if((s1[i]-'0')>(s2[i]-'0')) return false;
+            if((s1[i]-'0')>=(s2[i]-'0')) return false;
             if((s1[i]-'0')<(s2[i]-'0')) return true;
         }
     }
@@ -170,7 +170,7 @@ int main()
     if(s =="0" || s =="1") cout << "NO";
     else if(rmndr(s, "2") == "0" || rmndr(s, "3")=="0") cout << "NO";
     else{
-        string i = "0";
+        string i = "5";
         while(small(mul(i, i), s))
         {
             if(rmndr(s, i)=="0" || rmndr(s, add(i, "2"))=="0")
@@ -180,5 +180,6 @@ int main()
             }
             i = add(i, "6");
         }
+        if(!small(mul(i, i), s)) cout << "YES";
     }
 }
