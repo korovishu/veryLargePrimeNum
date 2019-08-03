@@ -37,6 +37,7 @@ bool small(string s1, string s2)
             if((s1[i]-'0')>=(s2[i]-'0')) return false;
             if((s1[i]-'0')<(s2[i]-'0')) return true;
         }
+        if(equal(s1, s2)) return false;
     }
 }
 string diff(string s1, string s2)
@@ -166,7 +167,6 @@ int main()
 {
     string s;
     cin >> s;
-    cout << rmndr("3", "3");
     if(s =="0" || s =="1") cout << "NO";
     else if(rmndr(s, "2") == "0" || rmndr(s, "3")=="0") cout << "NO";
     else{
